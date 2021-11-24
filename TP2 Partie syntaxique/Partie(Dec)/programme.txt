@@ -1,0 +1,6 @@
+program monpgm
+integer a,b;
+real j;
+begin
+a=5;
+end
