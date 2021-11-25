@@ -28,4 +28,5 @@ Exemple des fichiers: lexique.l syntaxe.y
                      1- flex   lexique.l
                      2- bison  -d syntaxe.y        
                      3- gcc  lex.yy.c syntaxe.tab.c -o exe
+                     4- exe ou ./exe (pour executer votre compilateur)
 
