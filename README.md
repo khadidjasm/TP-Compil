@@ -20,8 +20,8 @@ Langages de programmation supportés : GNU Bison peut générer du code C, C++ o
 
 3. Utilisation conjointe de flex et bison:
 
-La source yacc utilise l'analyseur lexical yylex()qui peut etre construit avec flex. L'option -d de la commenade bison  génére  un fichier entête qui doit être inclus dans la source de votre programme flex pour pouvoir utiliser les symboles definis par bison. 
-Ainsi, pour compiler l'analyseur syntaxique lysa decrit par  miny.y utilisant la definition d'un analyseur lexical mini.lex on procède :
+La source yacc utilise l'analyseur lexical yylex()qui peut être construit avec flex. L'option -d de la commande bison  génére  un fichier entête(syntaxe.tab.h)qui doit être inclus dans la source de votre programme flex pour pouvoir utiliser les symboles definis par bison er qui contient toutes les entitées définits dans flex. 
+Ainsi, pour compiler l'analyseur syntaxique lysa décrit par  syntaxe.y utilisant la definition d'un analyseur lexical lexique.l on procède :
  
 Exemple des fichiers: lexique.l syntaxe.y
 
