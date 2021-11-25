@@ -18,7 +18,7 @@ Scénarios d'utilisation : L'utilisation d'un analyseur syntaxique s'impose sur 
 Dans ce schéma, GNU Bison peut analyser le code source et remplacer toutes les instances de classes et les fonctions, y compris ses arguments. On peut par ailleurs associer Bison à l'analyseur lexical Flex, version libre de Lex. 
 Langages de programmation supportés : GNU Bison peut générer du code C, C++ ou Java, lequel pourra par la suite être compilé.
 
-Utilisation conjointe de flex et bison:
+3. Utilisation conjointe de flex et bison:
 
 La source yacc utilise l'analyseur lexical yylex()qui peut etre construit avec flex. L'option -d de la commenade bison  génére  un fichier entête qui doit être inclus dans la source de votre programme flex pour pouvoir utiliser les symboles definis par bison. 
 Ainsi, pour compiler l'analyseur syntaxique lysa decrit par  miny.y utilisant la definition d'un analyseur lexical mini.lex on procède :
