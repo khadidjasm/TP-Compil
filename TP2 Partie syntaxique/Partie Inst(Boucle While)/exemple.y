@@ -13,7 +13,7 @@ int num;
 char* str;
 }   
                  
-%token mc_begin mc_end mc_program mc_integer mc_real  ';' ',' '=' '/' '(' ')' '{' '}' '>' '"'
+%token mc_begin mc_end mc_program mc_integer mc_real mc_while mc_do subEgal infEgal doubleEgal notEgal  ';' ',' '=' '/' '(' ')' '<' '>' '"'
 %token <str>idf
 %token <num>cst
 %%
@@ -37,19 +37,24 @@ type: mc_integer | mc_real
 corps: corps inst | inst
 ;
 
-inst : instaff ';'| instdiv ';'
+inst : instaff ';'| instwhile ';'
 ;
-
-instaff: idf '=' idf 
-       | idf '=' cst 	   	   
-	
+instwhile: mc_while '(' expression ')' mc_do mc_begin corps mc_end
 ;
-
-instdiv: idf '=' idf '/' idf 
-       | idf '=' idf '/' cst  
-							
+instaff: idf '=' value 	   	   
+	| idf '=' instdiv
 ;
-
+expression: idf '>' value 
+	     |idf '<' value 
+	     |idf subEgal value 
+	     |idf infEgal value 
+	     |idf doubleEgal value 
+	     |idf notEgal value 
+;  
+instdiv:  value '/' value 							
+;
+value: idf|cst
+;
 %%
 int yyerror(char* msg)
 {printf("%s ligne %d et colonne %d",msg,ligne,col);

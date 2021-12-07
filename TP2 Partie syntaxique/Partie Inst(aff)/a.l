@@ -4,7 +4,7 @@
 #include "a.tab.h" 
 int ligne=1;
 int col=0;
-extern YYSTYPE yyval;
+extern YYSTYPE yylval;
 %}
 chiffre	[0-9]
 lettre [a-zA-Z]
